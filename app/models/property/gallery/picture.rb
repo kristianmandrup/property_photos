@@ -3,10 +3,8 @@ class Property::Gallery
     include Mongoid::Document
 
     # Use Picture uploader
-    included do
-      embedded_in :gallery, class_name: 'Property::Gallery', inverse_of: :pictures
+    embedded_in :gallery, class_name: 'Property::Gallery', inverse_of: :pictures
 
-      field :name, type: String, default: ''
-    end
+    field :name, type: String, default: ''
   end
 end
