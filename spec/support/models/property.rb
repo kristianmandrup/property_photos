@@ -1,5 +1,5 @@
 class Property
   include Mongoid::Document
 
-  include_concerns :pictures
+  include_concerns :photos
 end

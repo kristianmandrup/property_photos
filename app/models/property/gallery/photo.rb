@@ -1,50 +1,48 @@
-class Property
-  class Gallery
-    class Photo < ::RGallery::Photo
-      def initialize property, options = {}
-        super
-      end
+class Property::Gallery
+  class Photo < ::RGallery::Photo
+    def initialize property, options = {}
+      super
+    end
 
-      alias_method :property, :obj
+    alias_method :property, :obj
 
-      def path
-        File.join folder, super
-      end
+    def path
+      File.join folder, super
+    end
 
-      # mogrify -path fullpathto/temp2 -resize 60x60% -quality 60 -format jpg *.png
+    # mogrify -path fullpathto/temp2 -resize 60x60% -quality 60 -format jpg *.png
 
-      # this will take all png files in your current directory (temp), 
-      # resize to 60% (of largest dimension and keep aspect ratio), 
-      # set jpg quality to 60 and convert to jpg.
-      def thumb
-        File.join folder, 'thumbs', file_path
-      end
+    # this will take all png files in your current directory (temp), 
+    # resize to 60% (of largest dimension and keep aspect ratio), 
+    # set jpg quality to 60 and convert to jpg.
+    def thumb
+      File.join folder, 'thumbs', file_path
+    end
 
-      def title
-        property.title
-      end
+    def title
+      property.title
+    end
 
-      def alt
-        title
-      end
+    def alt
+      title
+    end
 
-      protected
+    protected
 
-      def property
-        obj
-      end
+    def property
+      obj
+    end
 
-      def filename
-        "#{property.picture}"
-      end    
+    def filename
+      "#{property.picture}"
+    end    
 
-      def folder
-        'galleria-photos'
-      end
+    def folder
+      'galleria-photos'
+    end
 
-      def self.extension
-        :jpg
-      end
+    def self.extension
+      :jpg
     end
   end
 end

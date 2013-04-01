@@ -19,6 +19,7 @@ group :test do
   gem 'delorean',   '>= 1.1'
 
   gem 'cutter',     '>= 0.8.2'
+  gem 'spork'
 
   # data store
   gem 'database_cleaner',   '>= 0.8'

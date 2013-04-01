@@ -1,5 +1,5 @@
 class Property
-  module Pictures
+  module Photos
     extend ActiveSupport::Concern
 
     included do

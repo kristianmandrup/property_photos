@@ -1,4 +1,4 @@
-class Property
+class Property::Gallery
   class Picture
     include Mongoid::Document
 

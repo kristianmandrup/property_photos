@@ -6,7 +6,19 @@ Should include upload logic using some nice gem for the job, likely using AWS or
 
 Uses `photos` gem for general purpose _photo_ functionality, integrating with and using *CarrierWave* and *Mongoid*.
 
-See *friendly_model* for more...
+## Usage
+
+```ruby
+class Property
+  include Mongoid::Document
+
+  include_concerns :photos
+end
+```
+
+## TODO
+
+`Property::Gallery` should embed many `Property::Photo`, not `Property::Picture`, which is just for simple test purposes!
 
 ## Gallery
 
